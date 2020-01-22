@@ -19,7 +19,7 @@ QDataStream& AddContactAnswer::fromStream(QDataStream &stream)
 
 DataType AddContactAnswer::type() const
 {
-    return DataType::AuthResponse;
+    return DataType::AddContactResponse;
 }
 
 bool AddContactAnswer::isExists() const

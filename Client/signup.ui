@@ -32,7 +32,7 @@
    <string>SignUp</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background: rgb(29, 29, 29)</string>
+   <string notr="true">background: rgb(1, 123, 113);</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QWidget" name="layoutWidget">
@@ -72,7 +72,7 @@
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">Color: rgb(255, 255, 255);</string>
+        <string notr="true">background: rgb(255, 252, 151);</string>
        </property>
        <property name="text">
         <string>Registration</string>
@@ -87,7 +87,7 @@
        <item row="0" column="0">
         <widget class="QLabel" name="login_lab">
          <property name="styleSheet">
-          <string notr="true">Color: rgb(255, 255, 255);</string>
+          <string notr="true">background: rgb(255, 252, 151);</string>
          </property>
          <property name="text">
           <string>Login</string>
@@ -97,14 +97,14 @@
        <item row="0" column="1">
         <widget class="QLineEdit" name="NewLogin">
          <property name="styleSheet">
-          <string notr="true">Color: rgb(255, 255, 255);</string>
+          <string notr="true">background: rgb(255, 252, 151);</string>
          </property>
         </widget>
        </item>
        <item row="1" column="0">
         <widget class="QLabel" name="pass_lab">
          <property name="styleSheet">
-          <string notr="true">Color: rgb(255, 255, 255);</string>
+          <string notr="true">background: rgb(255, 252, 151);</string>
          </property>
          <property name="text">
           <string>Password</string>
@@ -114,7 +114,7 @@
        <item row="1" column="1">
         <widget class="QLineEdit" name="NewPassword">
          <property name="styleSheet">
-          <string notr="true">Color: rgb(255, 255, 255);</string>
+          <string notr="true">background: rgb(255, 252, 151);</string>
          </property>
          <property name="text">
           <string/>
@@ -127,7 +127,7 @@
        <item row="2" column="0">
         <widget class="QLabel" name="conf_lab">
          <property name="styleSheet">
-          <string notr="true">Color: rgb(255, 255, 255);</string>
+          <string notr="true">background: rgb(255, 252, 151);</string>
          </property>
          <property name="text">
           <string>Confirm</string>
@@ -137,7 +137,7 @@
        <item row="2" column="1">
         <widget class="QLineEdit" name="Confirm">
          <property name="styleSheet">
-          <string notr="true">Color: rgb(255, 255, 255);</string>
+          <string notr="true">background: rgb(255, 252, 151);</string>
          </property>
          <property name="echoMode">
           <enum>QLineEdit::Password</enum>
@@ -149,7 +149,7 @@
      <item>
       <widget class="QLabel" name="signUpStatus">
        <property name="styleSheet">
-        <string notr="true">Color: rgb(255,0, 0);</string>
+        <string notr="true">background: rgb(1, 123, 113);</string>
        </property>
        <property name="text">
         <string/>
@@ -177,8 +177,7 @@
        <item row="0" column="1">
         <widget class="QPushButton" name="SignUpButton">
          <property name="styleSheet">
-          <string notr="true">color:green;
-body {background-color: #92a8d1;}</string>
+          <string notr="true">background-color: #f6ff93;</string>
          </property>
          <property name="text">
           <string>Sign up</string>

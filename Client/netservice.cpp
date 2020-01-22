@@ -102,7 +102,6 @@ void NetService::readAuthAnswer(QDataStream &readStream)
     if (!ans.isSigned())
     {
         menu->setStatus("Authentication error.");
-        socket->abort();
         return;
     }
 

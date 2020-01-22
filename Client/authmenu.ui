@@ -32,7 +32,7 @@
    <string>AuthMenu</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background: rgb(29, 29, 29)</string>
+   <string notr="true">background: rgb(1, 123, 113);</string>
   </property>
   <widget class="QWidget" name="centralWidget">
    <widget class="QWidget" name="layoutWidget">
@@ -67,7 +67,7 @@
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: silver;</string>
+        <string notr="true">background: rgb(255, 252, 151);</string>
        </property>
        <property name="text">
         <string>VTE Chat</string>
@@ -81,6 +81,12 @@
       <layout class="QFormLayout" name="Auth">
        <item row="0" column="0">
         <widget class="QLabel" name="LoginLabel">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
          <property name="minimumSize">
           <size>
            <width>70</width>
@@ -93,17 +99,20 @@
            <pointsize>12</pointsize>
           </font>
          </property>
+         <property name="layoutDirection">
+          <enum>Qt::LeftToRight</enum>
+         </property>
          <property name="autoFillBackground">
           <bool>false</bool>
          </property>
          <property name="styleSheet">
-          <string notr="true">color: silver;</string>
+          <string notr="true">background: rgb(255, 252, 151);</string>
          </property>
          <property name="text">
           <string>Login:</string>
          </property>
          <property name="alignment">
-          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          <set>Qt::AlignCenter</set>
          </property>
         </widget>
        </item>
@@ -119,7 +128,7 @@
           <bool>false</bool>
          </property>
          <property name="styleSheet">
-          <string notr="true">color: silver;
+          <string notr="true">background: rgb(255, 252, 151);
 selection-color: none;
 
 border-width: 2px;
@@ -150,7 +159,7 @@ padding: 2px;</string>
           </font>
          </property>
          <property name="styleSheet">
-          <string notr="true">color: silver;</string>
+          <string notr="true">background: rgb(255, 252, 151);</string>
          </property>
          <property name="text">
           <string>Password:</string>
@@ -160,7 +169,7 @@ padding: 2px;</string>
        <item row="1" column="1">
         <widget class="QLineEdit" name="Password">
          <property name="styleSheet">
-          <string notr="true">color: silver;
+          <string notr="true">background: rgb(255, 252, 151);
 selection-color: none;
 
 border-width: 2px;
@@ -187,7 +196,7 @@ padding: 2px;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color:rgba(255, 8, 8,150)</string>
+        <string notr="true">background: rgb(1, 123, 113)</string>
        </property>
        <property name="text">
         <string/>
@@ -225,7 +234,7 @@ padding: 2px;</string>
          </property>
          <property name="styleSheet">
           <string notr="true">QPushButton{
-color: silver;
+background: rgb(255, 252, 151);
 border-width: 2px;
 border-style: solid;
 border-color: rgb(52, 52, 52);
@@ -286,7 +295,7 @@ padding: 2px;
          </property>
          <property name="styleSheet">
           <string notr="true">QPushButton{
-color: silver;
+background: rgb(255, 252, 151);
 border-width: 2px;
 border-style: solid;
 border-color: rgb(52, 52, 52);

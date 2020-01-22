@@ -6,7 +6,6 @@ ChatWidget::ChatWidget(QWidget *parent)
     ui(new Ui::ChatWidget)
 {
     ui->setupUi(this);
-    ui->LoadedImages->setVisible(false);
 }
 
 ChatWidget::~ChatWidget()
@@ -64,8 +63,6 @@ void ChatWidget::on_SendButton_clicked()
 
     // Clear message line and loaded image label
     ui->MessageLine->clear();
-    ui->LoadedImages->clear();
-    ui->LoadedImages->setVisible(false);
 
     // Send message to server
     emit messageSent(msg);
@@ -85,8 +82,4 @@ void ChatWidget::on_loadImageButton_clicked()
     QImage img;
     img.load(path);
     bufferedImage.fromImage(img);
-
-    // Make UI visible
-    ui->LoadedImages->setVisible(true);
-    ui->LoadedImages->setText("Selected image: " + imageName);
 }

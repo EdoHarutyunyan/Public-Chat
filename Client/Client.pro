@@ -54,8 +54,7 @@ HEADERS += \
 FORMS += \
         authmenu.ui \
     chatwidget.ui \
-    signup.ui \
-    styledialog.ui
+    signup.ui
 
 RESOURCES += \
     qrc.qrc

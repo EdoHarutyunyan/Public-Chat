@@ -14,9 +14,7 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background: rgb(28, 28, 28);
-
-</string>
+   <string notr="true">background: rgb(1, 123, 113);</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <property name="styleSheet">
@@ -41,7 +39,7 @@ QListWidget::item:hover {
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">color: silver;</string>
+         <string notr="true">background:rgb(85, 255, 255);</string>
         </property>
         <property name="text">
          <string>Users online</string>
@@ -60,7 +58,7 @@ QListWidget::item:hover {
          </size>
         </property>
         <property name="styleSheet">
-         <string notr="true">color: silver;
+         <string notr="true">background: rgb(1, 123, 113);
 border-width: 2px;
 border-style: solid;
 border-color: rgb(52, 52, 52);
@@ -77,8 +75,20 @@ padding: 2px;</string>
      <layout class="QVBoxLayout" name="verticalLayout_3">
       <item>
        <widget class="QListWidget" name="Room">
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
         <property name="styleSheet">
-         <string notr="true">background-color: rgb(23, 23, 23)</string>
+         <string notr="true">background: rgb(1, 123, 113);
+selection-color: none;
+
+border-width: 2px;
+border-style: solid;
+border-color: rgb(52, 52, 52);
+
+padding: 5px;</string>
         </property>
         <property name="frameShape">
          <enum>QFrame::Panel</enum>
@@ -123,13 +133,13 @@ padding: 2px;</string>
            </font>
           </property>
           <property name="styleSheet">
-           <string notr="true">color: silver;
+           <string notr="true">background:rgb(85, 255, 255);
 selection-color: none;
 
 border-width: 2px;
 border-style: solid;
 border-color: rgb(52, 52, 52);
-padding: 2px;</string>
+padding: 5px;</string>
           </property>
           <property name="frameShape">
            <enum>QFrame::Panel</enum>
@@ -176,7 +186,7 @@ p, li { white-space: pre-wrap; }
           </property>
           <property name="styleSheet">
            <string notr="true">QPushButton{
-color: silver;
+background:rgb(85, 255, 255);
 border-width: 2px;
 border-style: solid;
 border-color: rgb(52, 52, 52);
@@ -193,41 +203,7 @@ padding: 2px;
           </property>
          </widget>
         </item>
-        <item>
-         <widget class="QPushButton" name="loadImageButton">
-          <property name="styleSheet">
-           <string notr="true">QPushButton {
-image: url(&quot;:/Image/attach.png&quot;);
-background: none;
-outline:none;
-border:none;
-width: 32px;
-height: 48px;
-}
-</string>
-          </property>
-          <property name="text">
-           <string/>
-          </property>
-         </widget>
-        </item>
        </layout>
-      </item>
-      <item>
-       <widget class="QLabel" name="LoadedImages">
-        <property name="font">
-         <font>
-          <family>Gadugi</family>
-          <pointsize>10</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">color:silver;</string>
-        </property>
-        <property name="text">
-         <string>Selected images:</string>
-        </property>
-       </widget>
       </item>
      </layout>
     </item>

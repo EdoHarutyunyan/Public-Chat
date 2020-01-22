@@ -5,8 +5,8 @@
 
 
 AuthMenu::AuthMenu(QWidget *parent)
-    : QMainWindow(parent),
-    ui(new Ui::AuthMenu)
+    : QMainWindow(parent)
+    , ui(new Ui::AuthMenu)
 {
     ui->setupUi(this);
     ui->Login->setFont(QFont("Gadugi", 12));
@@ -18,7 +18,6 @@ AuthMenu::~AuthMenu()
 {
     delete ui;
 }
-
 
 void AuthMenu::on_SignButton_clicked()
 {

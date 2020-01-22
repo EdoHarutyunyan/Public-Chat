@@ -33,7 +33,7 @@ void ConnectionHandler::on_New_Connection()
 
 void ConnectionHandler::connectSocketSignals(QTcpSocket *socket)
 {
-    qDebug() << "aaaaaaaaaaaaa";
+    qDebug() << "ConnectionHandler::connectSocketSignals()";
     connect(socket, SIGNAL(readyRead()),
             this, SLOT(on_Socket_Ready_Read()));
 
@@ -46,11 +46,11 @@ void ConnectionHandler::connectSocketSignals(QTcpSocket *socket)
 
 void ConnectionHandler::on_Client_Disconnection()
 {
-    auto disconnectedSocket = static_cast<QTcpSocket *>(sender());
-    auto username = clients.key(disconnectedSocket);
-    clients.remove(username);
-    username.setType(Disconnection);
-    writeAboutUserDisconnection(username);
+    //auto disconnectedSocket = static_cast<QTcpSocket *>(sender());
+    //auto username = clients.key(disconnectedSocket);
+    //clients.remove(username);
+    //username.setType(Disconnection);
+    //writeAboutUserDisconnection(username);
 }
 
 bool ConnectionHandler::isListening() const
@@ -78,7 +78,7 @@ void ConnectionHandler::write(QTcpSocket *socket, const BaseData &data)
     writeStream << qint16(0) << (qint8)data.type();
     writeStream << data;
     writeStream.device()->seek(0);
-    writeStream << qint16(datagram.size() - sizeof(qint16)); // writing data size
+    writeStream << qint16(datagram.size() - sizeof(qint16));
     socket->write(datagram);
     socket->waitForBytesWritten();
 }
@@ -96,6 +96,7 @@ void ConnectionHandler::on_Socket_Ready_Read()
         return;
     }
 
+    qDebug() << "ConnectionHandler::on_Socket_Ready_Read()";
     readStream >> type;
     if (type == DataType::AuthRequest)
     {
@@ -117,16 +118,26 @@ void ConnectionHandler::on_Socket_Ready_Read()
 
 void ConnectionHandler::readAuthRequest(QTcpSocket *socket)
 {
+    qDebug() << "ConnectionHandler::readAuthRequest()";
     QDataStream readStream(socket);
     UserData read;
     readStream >> read;
 
-    read.setType(DataType::AuthResponse);
-    writeAuthAnswer(socket, true);
-    writeAboutNewConnection(read);
+    bool isExist = false;
 
-    clients.insert(read, socket);
-    qDebug() << getIPv4AddrString(socket) << "authentication successful. Accepted.";
+    for(auto it = clients.begin(); it != clients.end(); ++it)
+    {
+        if (it.key().getUsername() == read.getUsername() && it.key().getPassword() == read.getPassword())
+        {
+            isExist = true;
+            writeAuthAnswer(socket, true);
+        }
+    }
+
+    if (!isExist)
+    {
+        writeAuthAnswer(socket, false);
+    }
 }
 
 void ConnectionHandler::readSignUpRequest(QTcpSocket *socket)
@@ -134,16 +145,14 @@ void ConnectionHandler::readSignUpRequest(QTcpSocket *socket)
     QDataStream readStream(socket);
     UserData read;
     readStream >> read;
-    qDebug() << "Mtnumaaaaaaaaaaaaaa";
+    qDebug() << "ConnectionHandler::readSignUpRequest()";
     read.getUsername();
     read.getPassword();
 
     read.setType(DataType::SignUpResponse);
     writeSignUpAnswer(socket, true);
     clients.insert(read, socket);
-    writeAboutNewConnection(read);
-
-    qDebug() << getIPv4AddrString(socket) << "authentication successful. Accepted.";
+    //writeAboutNewConnection(read);
 }
 
 void ConnectionHandler::readAddContactRequest(QTcpSocket *socket)
@@ -156,12 +165,14 @@ void ConnectionHandler::readAddContactRequest(QTcpSocket *socket)
 
 void ConnectionHandler::writeAuthAnswer(QTcpSocket *socket, bool answer)
 {
+    qDebug() << "ConnectionHandler::writeAuthAnswer()";
     AuthAnswer ans(answer);
     write(socket, ans);
 }
 
 void ConnectionHandler::writeSignUpAnswer(QTcpSocket *socket, bool answer)
 {
+    qDebug() << "ConnectionHandler::writeSignUpAnswer()";
     SignUpAnswer ans(answer);
     write(socket, ans);
 }
